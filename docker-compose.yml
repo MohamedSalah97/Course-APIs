@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app: 
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    restart: always
+  mongodb:
+    image: mongo
+    ports:
+      - "27018:27018"
+    command: mongod --port 27018 --bind_ip_all
