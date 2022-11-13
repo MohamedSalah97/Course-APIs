@@ -9,6 +9,8 @@ const mailgun = require('mailgun-js');
 
 const router = express.Router();
 
+require('dotenv').config();
+
 /**
  * @swagger
  * tags:
@@ -63,8 +65,8 @@ let upload = multer({
 });
 
 const mg = mailgun({
-    apiKey: '5966374220a9480a95752fa7eae083a0-48c092ba-6592302a' ,
-    domain: 'sandboxd8a3e6fa9edf43ea90dd650d096eea98.mailgun.org'
+    apiKey: process.env.APIKEY ,
+    domain: process.env.DOMAIN
 })
 
 

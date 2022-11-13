@@ -7,6 +7,8 @@ services:
     depends_on:
       - mongodb
     restart: always
+    env_file:
+      - .env
   mongodb:
     image: mongo
     ports:
